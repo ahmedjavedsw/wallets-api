@@ -2,14 +2,14 @@
     require_once ("walletus_php.php");
     $walletus_portal = new WalletUS_Portal();
 
-    if(isset($_REQUEST['invId'])){
+    if(isset($_POST['invId'])){
 
-        $invId          =   isset($_REQUEST['invId']) ? $_REQUEST['invId'] : '';
-        $unlockCode     =   isset($_REQUEST['unlockCode']) ? $_REQUEST['unlockCode'] : '';
-        $transactionId  =   isset($_REQUEST['transactionId']) ? $_REQUEST['transactionId'] : '';
-        $apiKey         =   isset($_REQUEST['apiKey']) ? $_REQUEST['apiKey'] : '';
-        $userEmail      =   isset($_REQUEST['userEmail']) ? $_REQUEST['userEmail'] : '';
-        $amount         =   isset($_REQUEST['amount']) ? $_REQUEST['amount'] : '';
+        $invId          =   isset($_POST['invId']) ? $_POST['invId'] : '';
+        $unlockCode     =   isset($_POST['unlockCode']) ? $_POST['unlockCode'] : '';
+        $transactionId  =   isset($_POST['transactionId']) ? $_POST['transactionId'] : '';
+        $apiKey         =   isset($_POST['apiKey']) ? $_POST['apiKey'] : '';
+        $userEmail      =   isset($_POST['userEmail']) ? $_POST['userEmail'] : '';
+        $amount         =   isset($_POST['amount']) ? $_POST['amount'] : '';
 
         // Check key is matched with the key given to you.
         // $apiKey is key recieved from wallet us.
