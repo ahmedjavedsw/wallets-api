@@ -14,10 +14,11 @@
     $unique_code	= date('ymdhis'); // date(ymdhis) is for testing purpose, This should be your system generated 8 digits unique Code and also this should be saved with in payment table.
     $successPaymentUrl    = 'www.testing.com/invoice/success'; // This will be URL where user will redirect after payment
     $cancelPaymentUrl     = 'www.testing.com/invoice/failure'; // This will be URL where user will redirect after cancellation of payment
-
+    
     $walletus_portal->set_access($email, $apiKey);
-    $walletus_portal->set_order($userEmail, $userName,  $amount, $invoiceId, $successPaymentUrl, $cancelPaymentUrl);
 
+    $walletus_portal->set_order($userEmail, $userName,  $amount, $invoiceId, $unique_code, $successPaymentUrl, $cancelPaymentUrl);
+   
     $new_payment = $walletus_portal->generate_link();
 
     // If $new_payment->status == 1 means invoice successfully created.
